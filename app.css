@@ -1,0 +1,150 @@
+/* Your styles should be mobile-first and responsive */
+
+/** 
+  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
+  *
+  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+  *
+*/
+
+
+html{
+  background-color:  #fcfafa;
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+}
+body{
+  text-align: center;
+}
+form{
+  display: inline-block;
+  margin-top: 20px;
+}
+ .light{
+  display: inline-block;
+  margin:5px;
+}
+
+header{
+  background-color: #f0d78c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  color:#4f81c7;
+}
+
+ #start{
+  color:#e16363;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Fjalla One', sans-serif;
+  -webkit-animation: fadeinout 4s linear forwards;
+  animation: fadeinout 4s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+0%,100% { opacity: 0; }
+50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+0%,100% { opacity: 0; }
+50% { opacity: 1; }
+}
+
+button{
+  background-color: #555555;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 12px;
+  margin: 20px 10px;
+  padding: 10px 20px;
+  opacity: 0.6;
+  transition: 0.3s;
+  text-decoration:none;
+  cursor: pointer;
+     
+}
+button:hover {
+  opacity: 1
+}
+.start-button{
+  margin-top:10px
+}
+
+li{
+  padding:10px;
+  text-align: left;
+}
+h1{
+  margin: 30px;
+}
+
+h2{
+  color:red;
+}
+
+.tellscore{
+  color:#4f81c7;
+  font-weight: bold;
+}
+input{
+  margin-left:5px;
+  margin-right:5px;
+}
+.quesline{
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 25px;
+}
+img{
+  margin-left:5px;
+  margin-right:5px;
+}
+
+@media screen and (max-width: 320px){
+  header{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  #start{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  button{
+    font-size: 12px;
+    margin: 20px 10px;
+    padding: 10px 12px;    
+  }
+  h1{
+    margin: 10px;
+    font-size: 20px;
+  }
+  .quesline{
+    font-size: 15px;
+  }
+  img{
+    width: 30px;
+    height:30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .current-question-text{
+    font-size: 15px;
+  }
+  li{
+    font-size: 15px;
+  }
+  .light{
+    font-size: 15px;
+  }
+  .correct{
+    font-size: 15px;
+  }
+  
+}
