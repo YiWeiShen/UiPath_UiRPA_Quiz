@@ -1,2 +1,3 @@
-# hsin_gage_quiz-app
-Quiz Application
+# UiPath_UiRPA_Quiz
+
+Quiz App to practice for UiPRA Certification Exam
