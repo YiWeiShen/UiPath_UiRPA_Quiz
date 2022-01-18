@@ -4,58 +4,72 @@
  */
 
 const store = {
-  // 5 or more questions are
   questions: [
+    // Introduction to RPA and Automation
     {
-      question: 'How is a function invoked in JavaScript?',
+      question: 'With StudioX you can automate...',
       answers: [
-        'call ThinkfulFn();',
-        'call function ThinkfulFn();',
-        'ThinkfulFn();',
-        'function ThinfulFn();'
-      ],
-      correctAnswer: 3
-    },
-    {
-      question: 'How to write (If “i” is NOT equal to 8) code?',
-      answers: [
-        'if(i ! 8)',
-        'if i<8',
-        'if(i!=8)',
-        'if i!=8'
-      ],
-      correctAnswer: 3
-    },
-    {
-      question: 'What does CSS stand for?',
-      answers: [
-        'Colorful Style Sheets',
-        'Cascading Style Sheets',
-        'Computer System Sheets',
-        'Cooperation Style System'
-      ],
-      correctAnswer: 2
-    },
-    {
-      question: 'Which function of an Array object calls a function for each element in the array?',
-      answers: [
-        'map()',
-        'function()',
-        'forEveryItem()',
-        'if()'
+        'Moving values from one Excel sheet to another or from Excel to a web application. OR, Downloading a report and sending it via email to predefined users.',
+        'End to end invoice processing through multiple platforms.',
+        'A chatbot that sends weekly work related reminders.'
       ],
       correctAnswer: 1
     },
     {
-      question: 'Choose the correct HTML element for the largest heading:',
+      question: 'There’s a lot of talk about what the future of work will entail. Besides the technological approach, a learning strategy for the employees must be put in place when getting started with RPA.',
       answers: [
-        'head',
-        'heading',
-        'h1',
-        'ul'
+        'False',
+        'True'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'RPA will not work in creative industries.',
+      answers: [
+        'False',
+        'True'
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'Processing invoices - retrieving data from the invoices and storing the values in  a database can be performed using…',
+      answers: [
+        'AI',
+        'RPA',
+        'AI + RPA'
       ],
       correctAnswer: 3
+    },
+    {
+      question: 'What does RPA stand for?',
+      answers: [
+        'Robotic Processing Automation',
+        'Robotic Process Analysis',
+        'Robotic Process Automation'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'Only low-skill jobs will be impacted by automation.',
+      answers: [
+        'False',
+        'True'
+      ],
+      correctAnswer: 1
     }
+    // questions template
+    //
+    // {
+    //   question: '',
+    //   answers: [
+    //     '',
+    //     '',
+    //     '',
+    //     ''
+    //   ],
+    //   correctAnswer: 
+    // },
+
   ],
   quizStart:false,
   questionNumber: 0,

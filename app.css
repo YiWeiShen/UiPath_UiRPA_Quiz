@@ -7,25 +7,27 @@
   *
 */
 
-
-html{
+html {
   background-color:  #fcfafa;
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
 }
-body{
+
+body {
   text-align: center;
 }
-form{
+
+form {
   display: inline-block;
   margin-top: 20px;
 }
- .light{
+
+.light {
   display: inline-block;
   margin:5px;
 }
 
-header{
+header {
   background-color: #f0d78c;
   display: flex;
   justify-content: center;
@@ -35,7 +37,7 @@ header{
   color:#4f81c7;
 }
 
- #start{
+#start {
   color:#e16363;
   font-size: 50px;
   font-weight: bold;
@@ -45,16 +47,16 @@ header{
 }
 
 @-webkit-keyframes fadeinout {
-0%,100% { opacity: 0; }
-50% { opacity: 1; }
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 
 @keyframes fadeinout {
-0%,100% { opacity: 0; }
-50% { opacity: 1; }
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 
-button{
+button {
   background-color: #555555;
   color: white;
   font-size: 20px;
@@ -66,85 +68,96 @@ button{
   opacity: 0.6;
   transition: 0.3s;
   text-decoration:none;
-  cursor: pointer;
-     
+  cursor: pointer; 
 }
+
 button:hover {
   opacity: 1
 }
-.start-button{
+
+.start-button {
   margin-top:10px
 }
 
-li{
+li {
   padding:10px;
   text-align: left;
 }
-h1{
+
+h1 {
   margin: 30px;
 }
 
-h2{
+h2 {
   color:red;
 }
 
-.tellscore{
+.tellscore {
   color:#4f81c7;
   font-weight: bold;
 }
-input{
-  margin-left:5px;
-  margin-right:5px;
-}
-.quesline{
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 25px;
-}
-img{
+
+input {
   margin-left:5px;
   margin-right:5px;
 }
 
-@media screen and (max-width: 320px){
-  header{
+.quesline {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 25px;
+}
+
+img {
+  margin-left:5px;
+  margin-right:5px;
+}
+
+@media screen and (max-width: 320px) {
+  header {
     padding-top: 15px;
     padding-bottom: 15px;
   }
 
-  #start{
+  #start {
     font-size: 25px;
     font-weight: bold;
   }
 
-  button{
+  button {
     font-size: 12px;
     margin: 20px 10px;
     padding: 10px 12px;    
   }
-  h1{
+
+  h1 {
     margin: 10px;
     font-size: 20px;
   }
-  .quesline{
+
+  .quesline {
     font-size: 15px;
   }
-  img{
+
+  img {
     width: 30px;
     height:30px;
     margin-left: 10px;
     margin-right: 10px;
   }
-  .current-question-text{
+
+  .current-question-text {
     font-size: 15px;
   }
-  li{
+
+  li {
     font-size: 15px;
   }
-  .light{
+
+  .light {
     font-size: 15px;
   }
-  .correct{
+
+  .correct {
     font-size: 15px;
   }
-  
 }
