@@ -82,7 +82,7 @@ const store = {
 function generateStartPage() {
   return `
   <form class="startPage">
-  <img src="images\\light.png"><p class="light">The quiz contains some questions and no time limit. </p></br>
+  <img src="images\\light.png"><p class="light">The quiz contains ${store.questions.length} questions and no time limit. </p></br>
   <img src="images\\light.png"><p class="light">Let's see how much you know, or don't know, about UiPath.</p></br>
   <p id="start">Good Luck !</p>
   <button type='submit' class='start-button'>Start Quiz</button> 
@@ -92,17 +92,19 @@ function generateStartPage() {
 }
 
 function generateCurrentQuestion() {
+  let radioButtons = '';  // initialize the radio buttons variable
+  let Alphabet = ['A', 'B', 'C', 'D'];
+  for (let i = 0; i < store.questions[store.questionNumber-1].answers.length; i++) {
+    radioButtons += `<li><label for ='${Alphabet[i]}' class='choice-${Alphabet[i]}'>${Alphabet[i]}.<input type='radio' name='choice' value='${i+1}' id = ${Alphabet[i]}>${store.questions[store.questionNumber-1].answers[i]}</label></li>`;
+  }
   return `
     <form class='current-question-choices'>
     <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of ${store.questions.length}</p>
     <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
     <ul style='list-style-type: none;'>
-      <li><label for ='a' class='choice-a'>A.<input type='radio' name='choice' value= 1 id = 'a' tabindex='0' required>${store.questions[store.questionNumber-1].answers[0]}</label></li>
-      <li><label for ='b' class='choice-b'>B.<input type='radio' name='choice' value= 2 id = 'b'>${store.questions[store.questionNumber-1].answers[1]}</label></li>
-      <li><label for ='c' class='choice-c'>C.<input type='radio' name='choice' value= 3 id = 'c'>${store.questions[store.questionNumber-1].answers[2]}</label></li>
-      <li><label for ='d' class='choice-d'>D.<input type='radio' name='choice' value= 4 id = 'd'>${store.questions[store.questionNumber-1].answers[3]}</label></li>
+      ${radioButtons}
     </ul>
-    <button type='submit' id='check-answer'>Check Answer</button>
+    <button type='submit' id='check-answer'>Submit</button>
     <button type="submit" class='restart-button'>Restart</button> 
     <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
     </form>
@@ -112,7 +114,10 @@ function generateCurrentQuestion() {
 function generateCorrectPage() {
   return `
   <form class='correct-answer-form'>
-  <h2>Correct Answer!</h2>
+  <h2 style='color: green;'>Correct Answer!</h2>
+  <br>
+  <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
+  <br>
   <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
   <button type='button' class='next-question'>Next Question</button>
   <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
@@ -124,6 +129,9 @@ function generateWrongPage() {
   return `
   <form class='wrong-answer-form'>
   <h2>Wrong Answer!</h2>
+  <br>
+  <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
+  <br>
   <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
   <button type='button' class='next-question'>Next Question</button>
   <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
