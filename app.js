@@ -82,8 +82,8 @@ const store = {
 function generateStartPage() {
   return `
   <form class="startPage">
-  <img src="images\\light.png"><p class="light">The quiz contains 5 questions and  no time limit. </p></br>
-  <img src="images\\light.png"><p class="light">Let's see how much you know, or don't know, about Javascript, CSS and HTML.</p></br>
+  <img src="images\\light.png"><p class="light">The quiz contains some questions and no time limit. </p></br>
+  <img src="images\\light.png"><p class="light">Let's see how much you know, or don't know, about UiPath.</p></br>
   <p id="start">Good Luck !</p>
   <button type='submit' class='start-button'>Start Quiz</button> 
   
@@ -94,7 +94,7 @@ function generateStartPage() {
 function generateCurrentQuestion() {
   return `
     <form class='current-question-choices'>
-    <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of 5</p>
+    <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of ${store.questions.length}</p>
     <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
     <ul style='list-style-type: none;'>
       <li><label for ='a' class='choice-a'>A.<input type='radio' name='choice' value= 1 id = 'a' tabindex='0' required>${store.questions[store.questionNumber-1].answers[0]}</label></li>
@@ -136,7 +136,7 @@ function generateQuizComplete() {
   <form class = "result">
   <label for="check result">Completed the Quiz</label>
   <p id="start">High Five!<img src="images\\high-five.png"></p>
-  <p class="quesline">You got <span class ="current-correct">${store.score}</span> out of 5!</p>
+  <p class="quesline">You got <span class ="current-correct">${store.score}</span> out of ${store.questions.length}!</p>
   <button type="submit" class='restart-button'>Restart</button>
 </form>`;
 }
@@ -146,7 +146,7 @@ function generateQuizComplete() {
 function render() {
   if (store.questionNumber === 0) {
     $('main').html(generateStartPage());
-  } else if (store.questionNumber > 0 && store.questionNumber <=5) {
+  } else if (store.questionNumber > 0 && store.questionNumber <= store.questions.length) {
     if (store.answerCheck === true) {
       $('main').html(generateCorrectPage());
     } else if (store.answerCheck === false) {
