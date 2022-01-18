@@ -1281,12 +1281,12 @@ const store = {
       answers: [
         'In mock workflows, you can only edit the mocked activities. Changes made in the source workflow file are applied to the mock file whenever the project is saved.',
         'You can have a single mock file for a test case.',
-        'In a Given-When-Then test case structure, 'Surround with mock' is available for the activities in all the three blocks.'
+        'In a Given-When-Then test case structure, \'Surround with mock\' is available for the activities in all the three blocks.'
       ],
       correctAnswer: 1
     }
 
-    
+
     // questions template
     // {
     //   question: '',
