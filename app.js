@@ -1733,11 +1733,10 @@ const store = {
 function generateStartPage() {
   return `
   <form class="startPage">
-  <img src="images\\light.png"><p class="light">The quiz contains ${store.questions.length} questions and no time limit. </p></br>
-  <img src="images\\light.png"><p class="light">Let's see how much you know, or don't know, about UiPath.</p></br>
-  <p id="start">Good Luck !</p>
-  <button type='submit' class='start-button btn btn-success'>Start Quiz</button> 
-  
+    <p class="light">The quiz contains ${store.questions.length} questions. </p></br>
+    <p class="light">Let's see how much you know, or don't know, about UiPath.</p></br>
+    <p id="start">Good Luck !</p>
+    <button type='submit' class='start-button btn btn-success'>Start Quiz</button> 
   </form>
   `;
 }
@@ -1750,14 +1749,14 @@ function generateCurrentQuestion() {
   }
   return `
     <form class='current-question-choices'>
-    <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of ${store.questions.length}</p>
-    <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
-    <ul style='list-style-type: none;'>
-      ${radioButtons}
-    </ul>
-    <button type='submit' id='check-answer' class="btn btn-primary">Submit</button>
-    <button type="submit" class="btn btn-secondary">Restart</button> 
-    <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
+      <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of ${store.questions.length}</p>
+      <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
+      <ul style='list-style-type: none;'>
+        ${radioButtons}
+      </ul>
+      <button type='submit' id='check-answer' class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-secondary">Restart</button> 
+      <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
     </form>
   `;
 }
@@ -1765,13 +1764,13 @@ function generateCurrentQuestion() {
 function generateCorrectPage() {
   return `
   <form class='correct-answer-form'>
-  <h2 class='text-success'>Correct Answer!</h2>
-  <br>
-  <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
-  <br>
-  <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
-  <button type='button' class='next-question btn btn-secondary'>Next Question</button>
-  <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
+    <h2 class='text-success'>Correct Answer!</h2>
+    <br>
+    <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
+    <br>
+    <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
+    <button type='button' class='next-question btn btn-secondary'>Next Question</button>
+    <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
   </form>
   `;
 }
@@ -1779,13 +1778,13 @@ function generateCorrectPage() {
 function generateWrongPage() {
   return `
   <form class='wrong-answer-form'>
-  <h2 class='text-danger'>Wrong Answer!</h2>
-  <br>
-  <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
-  <br>
-  <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
-  <button type='button' class='next-question btn btn-secondary'>Next Question</button>
-  <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
+    <h2 class='text-danger'>Wrong Answer!</h2>
+    <br>
+    <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
+    <br>
+    <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
+    <button type='button' class='next-question btn btn-secondary'>Next Question</button>
+    <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
   </form>
   `;
 }
@@ -1793,11 +1792,11 @@ function generateWrongPage() {
 function generateQuizComplete() {
   return `
   <form class = "result">
-  <label for="check result">Completed the Quiz</label>
-  <p id="start">High Five!<img src="images\\high-five.png"></p>
-  <p class="quesline">You got <span class ="current-correct">${store.score}</span> out of ${store.questions.length}!</p>
-  <button type="submit" class='restart-button'>Restart</button>
-</form>`;
+    <label for="check result">You have completed the Quiz</label>
+    <p id="start">Result:</p>
+    <p class="quesline">You got <span class ="current-correct">${store.score}</span> out of ${store.questions.length}!</p>
+    <button type="submit" class='restart-button btn btn-warning'>Restart</button>
+  </form>`;
 }
 
 // **** RENDER FUNCTION ****
