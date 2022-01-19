@@ -1783,7 +1783,7 @@ function generateWrongPage() {
     <br>
     <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
     <button type='button' class='next-question btn btn-secondary'>Next Question</button>
-    <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
+    <p class="tellscore mt-3">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
   </form>
   `;
 }
@@ -1793,7 +1793,9 @@ function generateQuizComplete() {
   <form class = "result m-5">
     <label for="check result">You have completed the Quiz</label>
     <p id="start">Result:</p>
+    <br>
     <p class="quesline">You got <span class ="current-correct">${store.score}</span> out of ${store.questions.length}!</p>
+    <br>
     <button type="submit" class='restart-button btn btn-warning'>Restart</button>
   </form>`;
 }
