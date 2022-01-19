@@ -16,7 +16,7 @@ const store = {
       correctAnswer: 1
     },
     {
-      question: 'There’s a lot of talk about what the future of work will entail. Besides the technological approach, a learning strategy for the employees must be put in place when getting started with RPA.',
+      question: 'There\’s a lot of talk about what the future of work will entail. Besides the technological approach, a learning strategy for the employees must be put in place when getting started with RPA.',
       answers: [
         'False',
         'True'
@@ -32,7 +32,7 @@ const store = {
       correctAnswer: 1
     },
     {
-      question: 'Processing invoices - retrieving data from the invoices and storing the values in  a database can be performed using…',
+      question: 'Processing invoices - retrieving data from the invoices and storing the values in a database can be performed using…',
       answers: [
         'AI',
         'RPA',
@@ -56,7 +56,7 @@ const store = {
         'True'
       ],
       correctAnswer: 1
-    }
+    },
 
     // Get Started with RPA Development
     {
@@ -127,7 +127,7 @@ const store = {
       correctAnswer: 2
     },
     {
-      question: 'When running a job, will all the automation ‘.xaml’ files included in the project be executed?',
+      question: 'When running a job, will all the automation ".xaml" files included in the project be executed?',
       answers: [
         'No, only workflows containing arguments will be executed.',
         'Yes, because data is passed between workflows using arguments. ',
@@ -622,7 +622,7 @@ const store = {
     {
       question: 'Which of the following statements is NOT true regarding the Find Element activity?',
       answers: [
-        'It throws an exception if it doesn’t find the element on screen.',
+        'It throws an exception if it doesn\’t find the element on screen.',
         'It returns a Boolean(True or False) specifying if the element was found on screen.',
         'It returns the found element in a variable for later use.'
       ],
@@ -841,7 +841,7 @@ const store = {
       correctAnswer: 4
     },
     {
-      question: 'The Global Exception Handler is ...... designed to determine the project’s behavior when encountering an execution error.',
+      question: 'The Global Exception Handler is ...... designed to determine the project\’s behavior when encountering an execution error.',
       answers: [
         'a property',
         'a type of workflow',
@@ -1286,7 +1286,40 @@ const store = {
       correctAnswer: 1
     }
 
+    // UiPath RPA Associate v1.0 Practice Test
+    // https://uipath.onlinetests.app/assess.aspx?aid=UIPATH-RPAV1-PT&apass=uippassword
 
+    // {
+    //   question: 'In UiPath Studio, which activities can be used as an anchor?',
+    //   answers: [
+    //     'Element Exists or Image Exists',
+    //     'Find Image or Find Element',
+    //     'Get Text or Get Visible Text',
+    //     'Wait Element Vanish or Wait Image Vanish'
+    //   ],
+    //   correctAnswer: 1
+    // },
+    // {
+    //   question: 'A developer has a workflow in which the value of a counter needs to be evaluated before the body of the loop is executed. Which Control Flow activity should be used?',
+    //   answers: [
+    //     'Do While',
+    //     'Switch',
+    //     'While',
+    //     'If'
+    //   ],
+    //   correctAnswer: 3
+    // },
+    // {
+    //   question: 'A user needs to download a report for each month of the year and decides to loop over the months using a For Each activity. Which data type is best-suited to hold the values of the names of the months?',
+    //   answers: [
+    //     'String',
+    //     'String[]',
+    //     'List<String>',
+    //     'Dictionary<Object,String>'
+    //   ],
+    //   correctAnswer: 2
+    // }
+    
     // questions template
     // {
     //   question: '',
