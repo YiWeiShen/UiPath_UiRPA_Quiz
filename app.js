@@ -1284,43 +1284,432 @@ const store = {
         'In a Given-When-Then test case structure, \'Surround with mock\' is available for the activities in all the three blocks.'
       ],
       correctAnswer: 1
-    }
+    },
 
     // UiPath RPA Associate v1.0 Practice Test
     // https://uipath.onlinetests.app/assess.aspx?aid=UIPATH-RPAV1-PT&apass=uippassword
 
-    // {
-    //   question: 'In UiPath Studio, which activities can be used as an anchor?',
-    //   answers: [
-    //     'Element Exists or Image Exists',
-    //     'Find Image or Find Element',
-    //     'Get Text or Get Visible Text',
-    //     'Wait Element Vanish or Wait Image Vanish'
-    //   ],
-    //   correctAnswer: 1
-    // },
-    // {
-    //   question: 'A developer has a workflow in which the value of a counter needs to be evaluated before the body of the loop is executed. Which Control Flow activity should be used?',
-    //   answers: [
-    //     'Do While',
-    //     'Switch',
-    //     'While',
-    //     'If'
-    //   ],
-    //   correctAnswer: 3
-    // },
-    // {
-    //   question: 'A user needs to download a report for each month of the year and decides to loop over the months using a For Each activity. Which data type is best-suited to hold the values of the names of the months?',
-    //   answers: [
-    //     'String',
-    //     'String[]',
-    //     'List<String>',
-    //     'Dictionary<Object,String>'
-    //   ],
-    //   correctAnswer: 2
-    // }
-    
-    // questions template
+    {
+      question: 'When reading a CSV file with the Read CSV activity, which property needs to be enabled in order to access data in the output datatable by the column names in UiPath Studio 2020.10?',
+      answers: [
+        'Delimiter',
+        'IgnoreQuotes',
+        'Has headers',
+        'PreserveFormat'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'When using the For Each activity to loop through the output of a Get Outlook Mail Messages activity, how should the TypeArgument property be set?',
+      answers: [
+        'UiPath.Mail.MailMessageExtensions',
+        'System.Web.UI.WebControls.MailMessageEventArgs',
+        'System.Net.Mail.Attachment',
+        'System.Net.Mail.MailMessage'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'In UiPath Studio, which argument direction(s) exist?',
+      answers: [
+        'Out arguments only',
+        'In arguments only',
+        'In, Out, and In/Out arguments',
+        'In/Out arguments only'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'A developer has added an Invoke Workflow File activity in Main.xaml to invoke the ProcessInvoices.xaml workflow. The developer needs to pass a DataTable called dt_Invoices from Main.xaml to ProcessInvoices.xaml. Which action needs to be performed?',
+      answers: [
+        'Declare an "Out" argument in ProcessInvoices.xaml',
+        'Declare an "Out" argument in Main.xaml',
+        'Declare an "In" argument in Main.xaml',
+        'Declare an "In" argument in ProcessInvoices.xaml'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'What is a unique feature of the UI Explorer tool?',
+      answers: [
+        'Allows the developer to indicate a selector',
+        'Allows the developer to view the full UI hierarchy tree',
+        'Allows the developer to repair a selector',
+        'Allows the developer to use wildcards in a selector'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'During development, a breakpoint is enabled at a particular activity. Later, the developer published the package to UiPath Orchestrator 2020.10. When the process runs from a UiPath Robot in an unattended mode, what is the expected behavior?',
+      answers: [
+        'Breakpoint will have no impact on the process execution',
+        'Process causes the robot to crash due to the breakpoint',
+        'Process generates an exception error due to the breakpoint',
+        'Breakpoint will cause the process to pause indefinitely'
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'What is the main feature of a flowchart?',
+      answers: [
+        'Provides a condition to facilitate the transition from one state to another',
+        'Determines the project\'s behavior when encountering an execution error',
+        'Enables the creation of complex business processes and connects activities in multiple ways by branching multiple logical operators',
+        'Provides the ability to seamlessly go from one activity to another and act as a single Block activity for linear processes'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'Which component of the UiPath platform is used to develop workflows?',
+      answers: [
+        'UiPath Agent',
+        'UI Explorer',
+        'UiPath Studio',
+        'UiPath Orchestrator'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'A developer is reviewing the file contents of a UiPath Studio project. In which location are the UiPath dependencies specified?',
+      answers: [
+        '.screenshots',
+        '.entities',
+        '.settings',
+        'project.json'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'A user needs to download a report for each month of the year and decides to loop over the months using a For Each activity. Which data type is best-suited to hold the values of the names of the months?',
+      answers: [
+        'List<String>',
+        'Dictionary<Object,String>',
+        'String[]',
+        'String'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'Which function does the Anchor Base activity provide?',
+      answers: [
+        'Confirms the selector for the element is "True" based on a nearby anchored element',
+        'Confirms the page is fully loaded and that all elements are in the same place as where the automation was developed',
+        'Searches for a UI element by using another UI element as an anchor and searches the specified area around the anchored element',
+        'Searches for a UI element by attaching to a reliable selector field and sends the tab hotkey until it is in the desired field'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'In UiPath Studio, which activities can be used as an anchor?',
+      answers: [
+        'Get Text or Get Visible Text',
+        'Element Exists or Image Exists',
+        'Wait Element Vanish or Wait Image Vanish',
+        'Find Image or Find Element'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'What describes a function of UiPath version control?',
+      answers: [
+        'Provides an effective way to manage larger projects that require collaboration between multiple users',
+        'Enables an effective way to connect to GIT, TFS, and SVN at the same time',
+        'Prohibits the comparison between multiple file versions',
+        'Stores only one version of a project on the version control system'
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'A developer needs to design a process in the following way:1. The process needs to validate the Payment Status field in an application. 2. There are three possible values in the Payment Status field named: Pending, Paid, or Awaiting Approval. 3. For "Pending", the process should check the "Due Date" field. If the Due Date has lapsed, raise an alert. Otherwise, do nothing. 4. For "Paid", change the Overall Status to Completed. 5. For "Awaiting Approval", send an alert email to the email address in the Account Owner field. Based on best practices, which activity is recommended for designing the process flow for Step 2?',
+      answers: [
+        'Report Status',
+        'Set Transaction Status',
+        'If',
+        'Switch'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'What is a feature of the Native screen scraping method?',
+      answers: [
+        'Supports Citrix',
+        'Extracts the text position',
+        'Runs in the background',
+        'Extracts hidden text'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'Which UiPath Studio panel can be used to change the scope of a variable?',
+      answers: [
+        'Variables',
+        'Project',
+        'Locals',
+        'Outline'
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'Which characters can be used as wildcards while editing a selector?',
+      answers: [
+        '% and !',
+        '_ and *',
+        '% and _',
+        '? and *'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'Which activity can be used to retrieve the value from a specific column, from a DataRow object?',
+      answers: [
+        'Get Row Item',
+        'Get Transaction Item',
+        'Filter Data Table',
+        'Remove Data Row'
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'What is the correct expression for displaying the current date in the Output panel using a Write Line activity in a "dd-MM-yyyy" format?',
+      answers: [
+        'Format(Now,"dd-MM-yyyy")',
+        'Now.ToString("dd-MM-yyyy")',
+        'Now."dd-MM-yyyy"',
+        'Now.CompareTo("dd-MM-yyyy")'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'How can a sequence named InitAllSettings.xaml be triggered from within Main.xaml?',
+      answers: [
+        'Using the Invoke Method activity',
+        'Using the Invoke Code activity',
+        'Using the Invoke Workflow File activity',
+        'Using the Open Application activity'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'A developer wants to retrieve all UI elements from a form based on a certain filter condition. Which activity should the developer use?',
+      answers: [
+        'Set Clipping Region',
+        'Find Element',
+        'Mouse Trigger',
+        'Find Children'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'Which data type does the Selector property of an activity accept?',
+      answers: [
+        'System.String',
+        'UiPath.Core.Selector',
+        'System.Security.SecureString',
+        'System.Xml.XmlElement'
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'When using an Excel Application Scope activity, which activity should be used to sort a table directly in an .xlsx file?',
+      answers: [
+        'Sort Table',
+        'Select Range',
+        'Get Table Range',
+        'Sort Data Table'
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'Based on best practice, how many Global Exception Handlers can be set per automation project?',
+      answers: [
+        'One for each activity in the project',
+        'One for each workflow in the project',
+        'An unlimited number in the project',
+        'One for the entire project'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'Which function is available with an attended robot?',
+      answers: [
+        'Process execution can continue under a locked screen',
+        'Processes can be started from UiPath Assistant or the command prompt',
+        'Process execution can be scheduled from Orchestrator',
+        'Process execution can be manually triggered from an Orchestrator shared folder'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'A developer needs to create a variable to store the value of an email address. Which variable property or field is optional?',
+      answers: [
+        'Name',
+        'Default',
+        'Scope',
+        'Variable type'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'A customer calls into a Call Center to get an update on their current outstanding payment. Consider the following use case: 1.  The customer provides the Customer ID to the call center representative. 2.  The call center representative inputs the Customer ID into a web application. 3.  The robot scrapes the data from the web application. 4.  The robot performs calculations. 5.  The outstanding amount is provided to the customer over the telephone by the representative. What is the number of steps that require manual intervention?',
+      answers: [
+        'One',
+        'Two',
+        'Three',
+        'Five'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'A developer wants to retrieve all rows in a Data Table variable with a "Price" value greater than 1000. Which activity can the developer use?',
+      answers: [
+        'Output Data Table',
+        'Filter Data Table',
+        'Lookup Data Table',
+        'Sort Data Table'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'What are the differences between variables and arguments?',
+      answers: [
+        'Variables must be assigned to an argument value. Arguments always have a direction',
+        'Variables always have a direction. Arguments can be assigned to a variable value',
+        'Variables pass data between activities inside the same workflow. Arguments pass data between workflow files',
+        'Variables pass data between workflow files. Arguments pass data between activities inside the same workflow'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'Which elements must exist for each Dictionary object?',
+      answers: [
+        'Item and Values',
+        'Item and Collection',
+        'Key and Collection',
+        'Key and Value'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'A developer needs to ensure a string has a valid email format. How can this be verified?',
+      answers: [
+        'Using a Send SMTP Mail Message activity',
+        'Using Regular Expressions',
+        'Using the Contains function with \'@.com\'',
+        'Using the Format Value activity'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'What describes the file access level needed when using the Workbook Read Range activity?',
+      answers: [
+        'Works with .xls and .xlsx files, and Excel must be installed',
+        'Works only with .xlsm files and Excel must be installed',
+        'Works only with .xls files and Excel does not need to be installed',
+        'Works with .xlsx files and Excel does not need to be installed'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'How can a full list of attributes of UI elements be displayed?',
+      answers: [
+        'Using the Outline panel',
+        'Using the UI Explorer tool',
+        'Using the "Indicate on Screen" button',
+        'Using the Output panel'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'A developer wants to build a project which iterates through multiple digital PDF invoice files to retrieve the Total Value. Assuming all the files have the same structure, which action should be performed based on best practices?',
+      answers: [
+        'Use the Find Image and Get Text activities in an Anchor Base activity',
+        'Ensure the selectors are valid for all invoices',
+        'Ensure the total values are copied to the clipboard by using Hotkeys',
+        'Use OCR activities to output the total value from all invoices'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'A user wants to write a data table to an .xlsx file; however, the file does not exist. What will happen if the Excel Write Range activity is used to write the data table?',
+      answers: [
+        'File will be created and the data will be located in the file',
+        'Process will throw an execution error',
+        'File will be created but the file will not contain any data',
+        'Process will continue the execution without creating the file'
+      ],
+      correctAnswer: 1
+    },
+    {
+      question: 'A developer wants to remove the company name from the "UiPath Certification" string. Which string method will return "Certification"?',
+      answers: [
+        '"UiPath Certification".Substring(6)',
+        '"UiPath Certification".Substring(6).Trim',
+        '"UiPath Certification".Substring(6,14)',
+        '"UiPath Certification".Substring(14,6)'
+      ],
+      correctAnswer: 2
+    },
+    {
+      question: 'Which data type is used to store data extracted from a Microsoft Excel file using a Read Range activity?',
+      answers: [
+        'String',
+        'Object',
+        'DataTable',
+        'Array'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'A developer has a workflow in which the value of a counter needs to be evaluated before the body of the loop is executed. Which Control Flow activity should be used?',
+      answers: [
+        'Switch',
+        'Do While',
+        'While',
+        'If'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'What is a characteristic of an Orchestrator Asset?',
+      answers: [
+        'All values from any Asset type are encrypted',
+        'Assets can hold entire DataTable variables',
+        'Asset values can be defined for each user',
+        'Asset types can be changed after creation of the asset'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'What are the differences between partial selectors and full selectors?',
+      answers: [
+        'Partial selectors include information about the top-level window. Full selectors are recommended to perform multiple actions in the same window.',
+        'Partial selectors do not include information about the top-level window. Full selectors are recommended to perform multiple actions in the same window.',
+        'Partial selectors are recommended when switching between multiple windows. Full selectors do not include information about the top-level window.',
+        'Partial selectors are recommended to perform multiple actions in the same window. Full selectors include information about the top-level window.'
+      ],
+      correctAnswer: 4
+    },
+    {
+      question: 'Which type(s) of automation does UiPath support?',
+      answers: [
+        'Unattended automation only',
+        'Hybrid and Unattended automation only',
+        'Attended, Hybrid, and Unattended automation',
+        'Attended and Hybrid automation only'
+      ],
+      correctAnswer: 3
+    },
+    {
+      question: 'What describes the relationship between UiPath Robots and UiPath Orchestrator?',
+      answers: [
+        'Attended robots can be connected to UiPath Orchestrator without Windows Credentials',
+        'UiPath Robots can be deleted if they have pending or active jobs in UiPath Orchestrator',
+        'UiPath Orchestrator consumes the Queue Items uploaded to the UiPath Robot',
+        'Unattended robots can be connected to UiPath Orchestrator without the Windows username'
+      ],
+      correctAnswer: 1
+    }
+    // question template
     // {
     //   question: '',
     //   answers: [
@@ -1347,7 +1736,7 @@ function generateStartPage() {
   <img src="images\\light.png"><p class="light">The quiz contains ${store.questions.length} questions and no time limit. </p></br>
   <img src="images\\light.png"><p class="light">Let's see how much you know, or don't know, about UiPath.</p></br>
   <p id="start">Good Luck !</p>
-  <button type='submit' class='start-button'>Start Quiz</button> 
+  <button type='submit' class='start-button btn btn-success'>Start Quiz</button> 
   
   </form>
   `;
@@ -1357,7 +1746,7 @@ function generateCurrentQuestion() {
   let radioButtons = '';  // initialize the radio buttons variable
   let Alphabet = ['A', 'B', 'C', 'D', 'E'];
   for (let i = 0; i < store.questions[store.questionNumber-1].answers.length; i++) {
-    radioButtons += `<li><label for ='${Alphabet[i]}' class='choice-${Alphabet[i]}'>${Alphabet[i]}.<input type='radio' name='choice' value='${i+1}' id = ${Alphabet[i]}>${store.questions[store.questionNumber-1].answers[i]}</label></li>`;
+    radioButtons += `<li><label for ='${Alphabet[i]}' class='choice-${Alphabet[i]}'><input type='radio' name='choice' value='${i+1}' id = ${Alphabet[i]}> ${Alphabet[i]}. ${store.questions[store.questionNumber-1].answers[i]}</label></li>`;
   }
   return `
     <form class='current-question-choices'>
@@ -1366,8 +1755,8 @@ function generateCurrentQuestion() {
     <ul style='list-style-type: none;'>
       ${radioButtons}
     </ul>
-    <button type='submit' id='check-answer'>Submit</button>
-    <button type="submit" class='restart-button'>Restart</button> 
+    <button type='submit' id='check-answer' class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-secondary">Restart</button> 
     <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
     </form>
   `;
@@ -1376,12 +1765,12 @@ function generateCurrentQuestion() {
 function generateCorrectPage() {
   return `
   <form class='correct-answer-form'>
-  <h2 style='color: green;'>Correct Answer!</h2>
+  <h2 class='text-success'>Correct Answer!</h2>
   <br>
   <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
   <br>
   <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
-  <button type='button' class='next-question'>Next Question</button>
+  <button type='button' class='next-question btn btn-secondary'>Next Question</button>
   <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
   </form>
   `;
@@ -1390,12 +1779,12 @@ function generateCorrectPage() {
 function generateWrongPage() {
   return `
   <form class='wrong-answer-form'>
-  <h2>Wrong Answer!</h2>
+  <h2 class='text-danger'>Wrong Answer!</h2>
   <br>
   <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
   <br>
   <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
-  <button type='button' class='next-question'>Next Question</button>
+  <button type='button' class='next-question btn btn-secondary'>Next Question</button>
   <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
   </form>
   `;
