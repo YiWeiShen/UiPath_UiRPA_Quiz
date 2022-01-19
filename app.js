@@ -1755,7 +1755,7 @@ function generateCurrentQuestion() {
         ${radioButtons}
       </ul>
       <button type='submit' id='check-answer' class="btn btn-primary">Submit</button>
-      <p class="tellscore mt-3">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
+      <p class="tellscore mt-3">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber-1}</p>
     </form>
   `;
 }
