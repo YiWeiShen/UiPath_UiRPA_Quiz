@@ -1732,7 +1732,7 @@ const store = {
 
 function generateStartPage() {
   return `
-  <form class="startPage">
+  <form class="startPage m-5">
     <p class="light">The quiz contains ${store.questions.length} questions. </p></br>
     <p class="light">Let's see how much you know, or don't know, about UiPath.</p></br>
     <p id="start">Good Luck !</p>
@@ -1748,37 +1748,36 @@ function generateCurrentQuestion() {
     radioButtons += `<li><label for ='${Alphabet[i]}' class='choice-${Alphabet[i]}'><input type='radio' name='choice' value='${i+1}' id = ${Alphabet[i]}> ${Alphabet[i]}. ${store.questions[store.questionNumber-1].answers[i]}</label></li>`;
   }
   return `
-    <form class='current-question-choices'>
+    <form class='current-question-choices m-3'>
       <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of ${store.questions.length}</p>
       <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
       <ul style='list-style-type: none;'>
         ${radioButtons}
       </ul>
       <button type='submit' id='check-answer' class="btn btn-primary">Submit</button>
-      <button type="submit" class="btn btn-secondary">Restart</button> 
-      <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
+      <p class="tellscore mt-3">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
     </form>
   `;
 }
 
 function generateCorrectPage() {
   return `
-  <form class='correct-answer-form'>
-    <h2 class='text-success'>Correct Answer!</h2>
+  <form class='correct-answer-form m-3'>
+    <h2 class='text-success'>Correct!</h2>
     <br>
     <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
     <br>
     <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
     <button type='button' class='next-question btn btn-secondary'>Next Question</button>
-    <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
+    <p class="tellscore mt-3">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
   </form>
   `;
 }
 
 function generateWrongPage() {
   return `
-  <form class='wrong-answer-form'>
-    <h2 class='text-danger'>Wrong Answer!</h2>
+  <form class='wrong-answer-form m-3'>
+    <h2 class='text-danger'>Wrong!</h2>
     <br>
     <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
     <br>
@@ -1791,7 +1790,7 @@ function generateWrongPage() {
 
 function generateQuizComplete() {
   return `
-  <form class = "result">
+  <form class = "result m-5">
     <label for="check result">You have completed the Quiz</label>
     <p id="start">Result:</p>
     <p class="quesline">You got <span class ="current-correct">${store.score}</span> out of ${store.questions.length}!</p>
