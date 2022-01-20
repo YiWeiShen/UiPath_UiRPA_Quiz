@@ -1709,6 +1709,7 @@ const store = {
       ],
       correctAnswer: 1
     }
+
     // question template
     // {
     //   question: '',
