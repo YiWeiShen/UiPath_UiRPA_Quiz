@@ -1709,6 +1709,7 @@ const store = {
       ],
       correctAnswer: 1
     }
+
     // question template
     // {
     //   question: '',
@@ -1722,7 +1723,7 @@ const store = {
     // },
 
   ],
-  quizStart:false,
+  quizStart: false,
   questionNumber: 0,
   score: 0,
   answerCheck: undefined
@@ -1753,10 +1754,13 @@ function shuffle(array) {
 
 function generateStartPage() {
   return `
-  <form class="startPage m-5">
-    <p class="light">The quiz contains ${store.questions.length} questions. </p></br>
-    <p class="light">Let's see how much you know, or don't know, about UiPath.</p></br>
-    <p id="start">Good Luck !</p>
+  <form class="m-5">
+    <p>The quiz contains ${store.questions.length} questions. </p>
+    </br>
+    <p>Let's see how much you know, or don't know, about UiPath.</p>
+    </br>
+    <p>Good Luck !</p>
+    <br>
     <button type='submit' class='start-button btn btn-success'>Start Quiz</button> 
   </form>
   `;
@@ -1764,7 +1768,7 @@ function generateStartPage() {
 
 function generateCurrentQuestion() {
   let radioButtons = '';  // initialize the radio buttons variable
-  let Alphabet = ['A', 'B', 'C', 'D', 'E'];
+  let Alphabet = ['A', 'B', 'C', 'D', 'E']; // if there are more choices for any question, this will need to be changed
   for (let i = 0; i < store.questions[store.questionNumber-1].answers.length; i++) {
     radioButtons += `<li><label for ='${Alphabet[i]}' class='choice-${Alphabet[i]}'><input type='radio' name='choice' value='${i+1}' id = ${Alphabet[i]}> ${Alphabet[i]}. ${store.questions[store.questionNumber-1].answers[i]}</label></li>`;
   }
@@ -1774,13 +1778,13 @@ function generateCurrentQuestion() {
   }
   return `
     <form class='current-question-choices m-3'>
-      <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of ${store.questions.length}</p>
-      <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
+      <p>Question ${store.questionNumber} of ${store.questions.length}</p>
+      <p>${store.questions[store.questionNumber-1].question}</p>
       <ul style='list-style-type: none;'>
         ${radioButtons}
       </ul>
       <button type='submit' id='check-answer' class="btn btn-primary">Submit</button>
-      <p class="tellscore mt-3">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber-1}</p>
+      <p class="mt-3">Current Score: ${store.score} of ${store.questionNumber-1}</p>
       <p>Percentage: ${percentage}%</p>
     </form>
   `;
@@ -1791,9 +1795,9 @@ function generateCorrectPage() {
   <form class='correct-answer-form m-3'>
     <h2 class='text-success'>Correct!</h2>
     <br>
-    <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
+    <p>${store.questions[store.questionNumber-1].question}</p>
     <br>
-    <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
+    <p>Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer-1]}</p>
     <button type='button' class='next-question btn btn-secondary'>Next Question</button>
   </form>
   `;
@@ -1804,9 +1808,9 @@ function generateWrongPage() {
   <form class='wrong-answer-form m-3'>
     <h2 class='text-danger'>Wrong!</h2>
     <br>
-    <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
+    <p>${store.questions[store.questionNumber-1].question}</p>
     <br>
-    <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
+    <p>Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
     <button type='button' class='next-question btn btn-secondary'>Next Question</button>
   </form>
   `;
@@ -1814,10 +1818,11 @@ function generateWrongPage() {
 
 function generateQuizComplete() {
   return `
-  <form class = "result m-5">
-    <label for="check result">Congratulations. You have completed the quiz.</label>
+  <form class="m-5">
+    <label>Congratulations. You have completed the quiz.</label>
     <br>
-    <p class="quesline">You got <span class ="current-correct">${store.score}</span> out of ${store.questions.length}!</p>
+    <p>Quiz Result:</p>
+    <p>You got ${store.score} out of ${store.questions.length}!</p>
     <br>
     <p>Final percentage: ${Math.floor(store.score/store.questions.length*100)}%</p>
     <br>
@@ -1896,9 +1901,5 @@ function main() {
 
 // randomize the questions
 shuffle(store.questions)
-$(main);
 
-/*
-CHECKLIST:
--Use mobile responsive design
- */
+$(main);
