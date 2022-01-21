@@ -1160,7 +1160,7 @@ const store = {
     {
       question: 'What are our options in the Solve Conflicts window?',
       answers: [
-        'We can select between keeping the remote or the local version of each individual activity',,
+        'We can select between keeping the remote or the local version of each individual activity',
         'We can select between keeping the remote or the local version of the workflow'
       ],
       correctAnswer: 2
@@ -1768,6 +1768,10 @@ function generateCurrentQuestion() {
   for (let i = 0; i < store.questions[store.questionNumber-1].answers.length; i++) {
     radioButtons += `<li><label for ='${Alphabet[i]}' class='choice-${Alphabet[i]}'><input type='radio' name='choice' value='${i+1}' id = ${Alphabet[i]}> ${Alphabet[i]}. ${store.questions[store.questionNumber-1].answers[i]}</label></li>`;
   }
+  let percentage = 0
+  if (store.questionNumber-1 != 0) {
+    percentage = Math.floor(store.score/(store.questionNumber-1)*100);
+  }
   return `
     <form class='current-question-choices m-3'>
       <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of ${store.questions.length}</p>
@@ -1777,6 +1781,7 @@ function generateCurrentQuestion() {
       </ul>
       <button type='submit' id='check-answer' class="btn btn-primary">Submit</button>
       <p class="tellscore mt-3">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber-1}</p>
+      <p>Percentage: ${percentage}%</p>
     </form>
   `;
 }
@@ -1790,7 +1795,6 @@ function generateCorrectPage() {
     <br>
     <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
     <button type='button' class='next-question btn btn-secondary'>Next Question</button>
-    <p class="tellscore mt-3">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
   </form>
   `;
 }
@@ -1804,7 +1808,6 @@ function generateWrongPage() {
     <br>
     <p class="correct">Correct Answer: ${store.questions[store.questionNumber-1].answers[store.questions[store.questionNumber-1].correctAnswer - 1]}</p>
     <button type='button' class='next-question btn btn-secondary'>Next Question</button>
-    <p class="tellscore mt-3">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
   </form>
   `;
 }
@@ -1812,10 +1815,11 @@ function generateWrongPage() {
 function generateQuizComplete() {
   return `
   <form class = "result m-5">
-    <label for="check result">You have completed the Quiz</label>
-    <p id="start">Result:</p>
+    <label for="check result">Congratulations. You have completed the quiz.</label>
     <br>
     <p class="quesline">You got <span class ="current-correct">${store.score}</span> out of ${store.questions.length}!</p>
+    <br>
+    <p>Final percentage: ${Math.floor(store.score/store.questions.length*100)}%</p>
     <br>
     <button type="submit" class='restart-button btn btn-warning'>Restart</button>
   </form>`;
