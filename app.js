@@ -1821,11 +1821,9 @@ function generateWrongPage() {
 function generateQuizComplete() {
   return `
   <form class="m-5">
-    <label>Congratulations. You have completed the quiz.</label>
-    <br>
+    <p>Congratulations. You have completed the quiz.</p>
     <p>Quiz Result:</p>
     <p>You got ${store.score} out of ${store.questions.length}!</p>
-    <br>
     <p>Final percentage: ${Math.floor(store.score/store.questions.length*100)}%</p>
     <br>
     <button type="submit" class='restart-button btn btn-warning'>Restart</button>
