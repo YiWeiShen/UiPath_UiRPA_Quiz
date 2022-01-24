@@ -1726,7 +1726,8 @@ const store = {
   quizStart: false,
   questionNumber: 0,
   score: 0,
-  answerCheck: undefined
+  answerCheck: undefined,
+  startTime: undefined
 };
 
 // Fisher-Yates (aka Knuth) Shuffle
@@ -1786,6 +1787,7 @@ function generateCurrentQuestion() {
       <button type='submit' id='check-answer' class="btn btn-primary">Submit</button>
       <p class="mt-3">Current Score: ${store.score} of ${store.questionNumber-1}</p>
       <p>Percentage: ${percentage}%</p>
+      <p id='timer'></p>
     </form>
   `;
 }
@@ -1859,6 +1861,7 @@ function handleStartQuiz() {
   $('.start-button').on('click', function(e){
     e.preventDefault();
     store.questionNumber = 1;
+    store.startTime = new Date().getTime();
     render();
   });
 }
@@ -1893,6 +1896,20 @@ function handleRestartQuiz() {
     render();
    });
 }
+
+setInterval(function() {
+  var now = new Date().getTime();
+  var distance = now - store.startTime;
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  hours = (hours < 10) ? ('0' + hours) : hours;
+  minutes = (minutes < 10) ? ('0' + minutes) : minutes;
+  seconds = (seconds < 10) ? ('0' + seconds) : seconds;
+
+  $('#timer').html('Timer: ' + hours + ':' + minutes + ':' + seconds);
+}, 1000);
 
 function main() {
   render();
